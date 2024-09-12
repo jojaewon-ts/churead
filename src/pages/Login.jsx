@@ -1,21 +1,30 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import InputField from '../components/InputField'
+import LoginButton from '../components/LoginButton'
 
 const Login = () => {
   //logic
-const history = useNavigate()
+// const history = useNavigate()
 
-const goToHome = () => {
-  history('/');
-};
+// const goToHome = () => {
+//   history('/');
+// };
 
   return (
-    <div style={{ backgroundColor: "blue"}}>
-      <h2>Login</h2>
+    <div>
+      {/* <h2>Login</h2> */}
       {/* <button type="button" onClick={goToHome}>
         Hom화면으로 이동
       </button> */}
-      <Link to={"/home"} style={{ color: "#fff"}}>Home화면으로 이동</Link>
+      {/* <Link to={"/"} style={{ color: "#fff"}}>Home화면으로 이동</Link> */}
+      <h1>
+        <img src='./images/logo.svg' alt='churead로고' />
+      </h1>
+      <h3>Churead에서 소통해보세요</h3>
+      <InputField />
+      <InputField />
+      <LoginButton />
+      <LoginButton />
     </div>
   )
 }
