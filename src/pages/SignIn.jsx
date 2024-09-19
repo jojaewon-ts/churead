@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InputField from "../components/InputField";
 import LoginButton from "../components/LoginButton";
 import { Link } from "react-router-dom";
@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 // TODO: 파일면 SignUp으로 바꾸기, path도 바꾸기
 const SignIn = () => {
   // logic
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   // view
   return (
     <div className="h-full flex flex-col justify-center">
