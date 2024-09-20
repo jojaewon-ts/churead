@@ -9,6 +9,10 @@ const SignIn = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+
+  
   // view
   return (
     <div className="h-full flex flex-col justify-center">

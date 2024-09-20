@@ -2,7 +2,12 @@ import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RiHomeLine } from "react-icons/ri";
 import { RiEditBoxLine } from "react-icons/ri";
-import { MdOutlinePerson } from "react-icons/md";
+import { BsPerson } from "react-icons/bs";
+import { RiHomeFill } from "react-icons/ri";
+import { RiEditBoxFill } from "react-icons/ri";
+import { BsPersonFill } from "react-icons/bs";
+
+
 
 const Nav = () => {
   // logic
@@ -18,19 +23,19 @@ const Nav = () => {
     id: 1,
     pathName: "/",
     icon: <RiHomeLine size={"28px"}/>,
-    activeIcon: <RiHomeLine size={"28px"}/>,
+    activeIcon: <RiHomeFill size={"28px"}/>,
   },
   {
   id: 2,
     pathName: "/post",
     icon: <RiEditBoxLine size={"28px"}/>,
-    activeIcon: <RiEditBoxLine size={"28px"}/>,
+    activeIcon: <RiEditBoxFill size={"28px"}/>,
   },
   {
   id: 3,
     pathName: "/profile",
-    icon: <MdOutlinePerson size={'28px'}/>,
-    activeIcon: <MdOutlinePerson size={'28px'}/>,
+    icon: <BsPerson size={'28px'}/>,
+    activeIcon: <BsPersonFill size={'28px'}/>,
   },
 ]
 

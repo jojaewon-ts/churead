@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/layout/Header";
 import Nav from "../components/layout/Nav";
 import FeedItem from "../components/FeedItem";
+import { initialFeedList, initialfeedList } from "../data/response";
 
-const Home = () => {
+const Home = ({churead}) => {
+
+  const [feedList, setFeedList] = useState
+  (initialFeedList);
+
+
+
+  useEffect(() => {
+    if (!churead) return
+    const newFeed = {
+
+      id: feedList.length + 1,
+      userName: "anonymous",
+      userProfileImage: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
+      churead: churead,
+      likeCount: 0,
+    };
+    setFeedList([newFeed, ...feedList]);
+  }, []);
+
+
+
   return (
     <div className="h-full pt-20 pb-[74px] overflow-hidden">
       {/* START: 헤더 영역 */}
@@ -13,10 +35,9 @@ const Home = () => {
         <div>
           {/* START: 피드 영역 */}
           <ul>
-            <FeedItem />
-            <FeedItem />
-            <FeedItem />
-            <FeedItem />
+            {feedList.map((feed) => 
+              <FeedItem key ={feed.id} data={feed} />
+            )}
           </ul>
           {/* END: 피드 영역 */}
         </div>
