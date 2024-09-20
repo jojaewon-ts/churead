@@ -1,32 +1,51 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { RiHomeLine } from "react-icons/ri";
 import { RiEditBoxLine } from "react-icons/ri";
-import { IoPersonSharp } from "react-icons/io5";
+import { MdOutlinePerson } from "react-icons/md";
 
 const Nav = () => {
   // logic
+
+  const location = useLocation();
+
+
+
+
+  
+  const navList = [
+    {
+    id: 1,
+    pathName: "/",
+    icon: <RiHomeLine size={"28px"}/>,
+    activeIcon: <RiHomeLine size={"28px"}/>,
+  },
+  {
+  id: 2,
+    pathName: "/post",
+    icon: <RiEditBoxLine size={"28px"}/>,
+    activeIcon: <RiEditBoxLine size={"28px"}/>,
+  },
+  {
+  id: 3,
+    pathName: "/profile",
+    icon: <MdOutlinePerson size={'28px'}/>,
+    activeIcon: <MdOutlinePerson size={'28px'}/>,
+  },
+]
+
 
   // view
   return (
     <nav className="fixed bottom-0 bg-churead-gray-800 w-full max-w-[572px]">
       <ul className="flex justify-center">
-        <li>
-          <Link to="/" className="block p-6">
-            <img src="./images/icon-home.svg" alt="Home으로 가기" />
+        {navList.map(nav => (
+        <li key={nav.id}>
+          <Link to={nav.pathName} className="block p-6">
+            {location.pathname === nav.pathName ? nav.activeIcon : nav.icon}
           </Link>
         </li>
-        <li>
-          <Link to="/" className="block p-6">
-            {/* <img src="./images/icon-home.svg" alt="Home으로 가기" /> */}
-            <RiEditBoxLine size={"28px"}/>
-          </Link>
-        </li>
-        <li>
-          <Link to="/" className="block p-6">
-            {/* <img src="./images/icon-home.svg" alt="Home으로 가기" /> */}
-            <IoPersonSharp size={'28px'}/>
-          </Link>
-        </li>
+        ))}
       </ul>
     </nav>
   );

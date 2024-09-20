@@ -1,4 +1,7 @@
 import React from "react";
+import { BiLike } from "react-icons/bi";
+import { RiDeleteBinLine } from "react-icons/ri";
+import { FiEdit3 } from "react-icons/fi";
 
 const FeedItem = () => {
   return (
@@ -16,10 +19,10 @@ const FeedItem = () => {
             {/* START: 수정, 삭제 버튼 영역 */}
             <div className="ml-auto">
               <button type="button" className="max-w-6 p-1">
-                <img src="./images/icon-home.svg" alt="" />
+              <RiDeleteBinLine />
               </button>
               <button type="button" className="max-w-6 p-1">
-                <img src="./images/icon-home.svg" alt="" />
+              <FiEdit3 />
               </button>
             </div>
             {/* END: 수정, 삭제 버튼 영역 */}
@@ -32,7 +35,7 @@ const FeedItem = () => {
           {/* START: 좋아요 영역 */}
           <div className="flex items-center">
             <button type="button" className="text-churead-gray-400">
-              좋아요 아이콘 <span>5</span>
+            <BiLike /> <span>5</span>
             </button>
           </div>
           {/* END: 좋아요 영역 */}
